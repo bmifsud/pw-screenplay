@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig",
+  "include": [
+    "src/**/*.ts",
+    "playwright.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
