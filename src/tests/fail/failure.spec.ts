@@ -1,13 +1,13 @@
 import '../setup';
 
-import { test } from '@playwright/test';
 import { Ensure, equals } from '@serenity-js/assertions';
 import { actorCalled } from '@serenity-js/core';
 import { configure } from '@serenity-js/core';
+import { BrowseTheWebWithPlaywright } from '@serenity-js/playwright';
+import { test } from '@serenity-js/playwright-test';
 import { CallAnApi } from '@serenity-js/rest';
 import { LastResponse } from '@serenity-js/rest';
 import { By, Click,Navigate, PageElement } from '@serenity-js/web';
-import { BrowseTheWebWithPlaywright } from '@serenity-js/playwright';
 
 import { BookingApi } from '../../domain/api/restful-booker/BookingApi';
 import { JiraReporter } from '../JiraReporter';
@@ -21,6 +21,7 @@ configure({
 
 test.describe('Negative Path: Demonstrating Framework Resilience and Error Handling', () => {
 
+    test.describe.configure({ timeout: 15000 });
     test('Intentional UI Failure - Missing Element', async ({ browser }) => {
         const bob = actorCalled('Bob').whoCan(BrowseTheWebWithPlaywright.using(browser));
 

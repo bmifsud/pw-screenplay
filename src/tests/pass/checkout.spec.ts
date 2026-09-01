@@ -1,13 +1,13 @@
 import '../setup';
 
-import { test } from '@playwright/test';
+import { test } from '@serenity-js/playwright-test';
 import { Ensure, equals, isPresent } from '@serenity-js/assertions';
 import { actorCalled } from '@serenity-js/core';
+import { Wait } from '@serenity-js/core';
+import { BrowseTheWebWithPlaywright } from '@serenity-js/playwright';
 import { CallAnApi } from '@serenity-js/rest';
 import { LastResponse } from '@serenity-js/rest';
 import { Click, isVisible } from '@serenity-js/web';
-import { BrowseTheWebWithPlaywright } from '@serenity-js/playwright';
-import { Wait } from '@serenity-js/core';
 
 import { BookingApi } from '../../domain/api/restful-booker/BookingApi';
 import { Cart } from '../../domain/ui/automation-exercise/Cart';
@@ -21,7 +21,7 @@ test.describe('Happy Path: Checkout and API Validations', () => {
 
         await alice.attemptsTo(
             Navigation.toHomePage(),
-            Wait.until(ProductList.firstProductAddToCartButton(), isVisible()),
+            Wait.until(ProductList.firstProductAddToCartButton(), isPresent()),
             Click.on(ProductList.firstProductAddToCartButton()),
             Wait.until(ProductList.continueShoppingButton(), isVisible()),
             Click.on(ProductList.continueShoppingButton()),
