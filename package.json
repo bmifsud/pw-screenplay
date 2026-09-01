@@ -5,6 +5,7 @@
   "description": "A functional QA automation prototype utilizing the Serenity/JS Playwright boilerplate.",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test:pass_suite",
     "test:pass_suite": "cross-env TEST_SUITE=pass playwright test src/tests/pass",
     "test:demo_failure": "cross-env TEST_SUITE=fail playwright test src/tests/fail",
     "test:report": "npx @serenity-js/html-reporter serve --dir ./reports/serenity-js --open",
