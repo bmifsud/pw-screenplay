@@ -1,0 +1,63 @@
+{
+  "name": "pw-screenplay",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A functional QA automation prototype utilizing the Serenity/JS Playwright boilerplate.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:pass_suite",
+    "test:pass_suite": "cross-env TEST_SUITE=pass playwright test src/tests/pass",
+    "test:demo_failure": "cross-env TEST_SUITE=fail playwright test src/tests/fail",
+    "test:report": "npx @serenity-js/html-reporter serve --dir ./reports/serenity-js --open",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serenity-js/serenity-js-playwright-test-template.git"
+  },
+  "keywords": [
+    "serenity-js",
+    "bdd",
+    "playwright",
+    "playwright-test",
+    "testing"
+  ],
+  "author": "Jules",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^20 || ^22 || ^24"
+  },
+  "dependencies": {
+    "@serenity-js/assertions": "^3.45.9",
+    "@serenity-js/console-reporter": "^3.45.9",
+    "@serenity-js/core": "^3.45.9",
+    "@serenity-js/html-reporter": "^3.45.9",
+    "@serenity-js/playwright": "^3.45.9",
+    "@serenity-js/playwright-test": "^3.45.9",
+    "@serenity-js/rest": "^3.45.9",
+    "@serenity-js/web": "^3.45.9"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@mswjs/interceptors": "^0.42.3",
+    "@playwright/test": "^1.62.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^24.13.3",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^9.39.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unicorn": "^62.0.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "msw": "^2.15.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.68.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

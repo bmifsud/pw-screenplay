@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "^@serenity-js/",
+        "^playwright",
+        "^@playwright/",
+        "serenity-js/playwright"
+      ],
+      "groupName": "Serenity/JS and Playwright",
+      "automerge": true
+    },
+    {
+      "packagePatterns": ["^eslint$", "^eslint-plugin", "^@eslint/", "^@typescript-eslint"],
+      "groupName": "ESLint",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ]
+}
